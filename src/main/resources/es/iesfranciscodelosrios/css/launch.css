@@ -1,0 +1,15 @@
+.fondo{
+    -fx-background-image: url("../images/novigrado.jpg");
+}
+.button{
+    -fx-background-color: #4287f5;
+}
+
+#tabpane .tab-header-background{
+    -fx-background-color: transparent;
+}
+
+#tabpane .tab-content-area{
+    -fx-background-color: #a87c6c;
+}
+

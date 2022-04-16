@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<BorderPane stylesheets="@../css/launch.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1">
+   <center>
+      <GridPane id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" styleClass="fondo" stylesheets="@../css/launch.css">
+        <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="279.0" minWidth="10.0" prefWidth="114.0" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="410.0" minWidth="10.0" prefWidth="369.0" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="127.0" minWidth="10.0" prefWidth="117.0" />
+        </columnConstraints>
+        <rowConstraints>
+            <RowConstraints maxHeight="108.0" minHeight="10.0" prefHeight="93.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="297.0" minHeight="10.0" prefHeight="268.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="127.0" minHeight="0.0" prefHeight="29.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <TabPane id="tabpane" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="150.0" prefWidth="150.0" style="-fx-border-color: blue; -fx-border-radius: 10; -fx-tab-max-width: 100;" stylesheets="@../css/launch.css" tabClosingPolicy="UNAVAILABLE" tabMaxWidth="130.0" tabMinWidth="155.0" GridPane.columnIndex="1" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1" GridPane.vgrow="ALWAYS">
+              <tabs>
+                <Tab text="Iniciar Sesion">
+                  <content>
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <TextField fx:id="txt_user_login" layoutX="96.0" layoutY="66.0" promptText="Usuario" />
+                              <PasswordField fx:id="txt_pw_login" layoutX="96.0" layoutY="131.0" promptText="Contraseña" />
+                              <Label layoutX="139.0" layoutY="106.0" text="Contraseña" />
+                              <Button fx:id="btn_login" layoutX="148.0" layoutY="191.0" mnemonicParsing="false" text="Login" />
+                              <Label layoutX="151.0" layoutY="39.0" text="Usuario" />
+                           </children></AnchorPane>
+                  </content>
+                </Tab>
+                  <Tab text="Registrate">
+                     <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <TextField fx:id="txt_user_register" layoutX="96.0" layoutY="66.0" promptText="Usuario" />
+                              <PasswordField fx:id="txt_pw_register" layoutX="96.0" layoutY="131.0" promptText="Contraseña" />
+                              <Label layoutX="140.0" layoutY="105.0" text="Contraseña" />
+                              <Button fx:id="btn_register" layoutX="135.0" layoutY="191.0" mnemonicParsing="false" text="Registrate" />
+                              <Label layoutX="151.0" layoutY="39.0" text="Usuario" />
+                           </children>
+                        </AnchorPane>
+                     </content>
+                  </Tab>
+              </tabs>
+            </TabPane>
+            <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1">
+               <children>
+                  <Label layoutX="42.0" layoutY="36.0" text="MEDIEVAL GAME" textAlignment="CENTER" textFill="#10393c">
+                     <font>
+                        <Font name="SansSerif Italic" size="37.0" />
+                     </font></Label>
+               </children>
+            </AnchorPane>
+         </children>
+      </GridPane>
+   </center>
+</BorderPane>
