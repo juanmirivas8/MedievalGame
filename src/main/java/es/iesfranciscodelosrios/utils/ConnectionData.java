@@ -8,10 +8,13 @@ import jakarta.xml.bind.annotation.XmlAccessorType;
 import jakarta.xml.bind.annotation.XmlRootElement;
 
 import java.io.File;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 @XmlRootElement
 @XmlAccessorType(XmlAccessType.FIELD)
 public class ConnectionData {
+    protected static final Logger Log = Utils.getLogger();
     private String database;
     private String user;
     private String password;
@@ -22,6 +25,7 @@ public class ConnectionData {
 
     public ConnectionData(String url) {
         this.load(url);
+        Log.log(Level.INFO,"XML cargado correctamente");
     }
 
     public String getDatabase() {
@@ -61,13 +65,13 @@ public class ConnectionData {
         try {
             JAXBContext context = JAXBContext.newInstance(ConnectionData.class);
             Unmarshaller um = context.createUnmarshaller();
-            aux = (ConnectionData) um.unmarshal(new File(url));
+            aux = (ConnectionData) um.unmarshal(ConnectionData.class.getResourceAsStream(url));
             this.database = aux.database;
             this.server = aux.server;
             this.user = aux.user;
             this.password = aux.password;
         } catch (JAXBException e) {
-            e.printStackTrace();
+            Log.log(Level.SEVERE,"Problema al cargar XML");
         }
     }
 }

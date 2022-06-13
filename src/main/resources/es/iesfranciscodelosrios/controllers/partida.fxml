@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="566.0" prefWidth="842.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Button fx:id="btn_exit" layoutX="26.0" layoutY="511.0" mnemonicParsing="false" prefHeight="28.0" prefWidth="109.0" text="Salir" />
+      <Button fx:id="btn_save" layoutX="145.0" layoutY="511.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="110.0" text="Guardar y Salir" />
+      <Button fx:id="btn_nextTurn" layoutX="41.0" layoutY="302.0" mnemonicParsing="false" prefHeight="147.0" prefWidth="190.0" text="Siguiente Turno" />
+      <Slider fx:id="slider_adm" layoutX="41.0" layoutY="34.0" prefHeight="16.0" prefWidth="208.0" showTickLabels="true" showTickMarks="true" value="50.0" />
+      <Label alignment="CENTER" layoutX="41.0" layoutY="14.0" prefHeight="19.0" prefWidth="208.0" text="Gasto en la administracion" />
+      <Slider fx:id="slider_mil" layoutX="41.0" layoutY="99.0" prefHeight="16.0" prefWidth="208.0" showTickLabels="true" showTickMarks="true" value="50.0" />
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="41.0" layoutY="75.0" prefHeight="19.0" prefWidth="208.0" text="Gasto en el ejercito" />
+      <Slider fx:id="slider_social" layoutX="41.0" layoutY="161.0" prefHeight="16.0" prefWidth="208.0" showTickLabels="true" showTickMarks="true" value="50.0" />
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="41.0" layoutY="140.0" prefHeight="19.0" prefWidth="208.0" text="Gasto Social" />
+      <Slider fx:id="slider_tax" layoutX="41.0" layoutY="234.0" prefHeight="16.0" prefWidth="208.0" showTickLabels="true" showTickMarks="true" value="50.0" />
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="41.0" layoutY="202.0" prefHeight="19.0" prefWidth="208.0" text="Impuestos" />
+      <Label layoutX="316.0" layoutY="14.0" text="Dinero" />
+      <Label layoutX="302.0" layoutY="75.0" text="Soldadesca" />
+      <Label layoutX="306.0" layoutY="140.0" text="Poblacion" />
+      <Label layoutX="309.0" layoutY="202.0" text="Inflacion" />
+      <Label layoutX="301.0" layoutY="265.0" text="Corrupcion" />
+      <Label layoutX="302.0" layoutY="335.0" text="Estabilidad" />
+      <Label layoutX="501.0" layoutY="14.0" text="Ingresos" />
+      <Label layoutX="639.0" layoutY="14.0" text="Gastos" />
+      <Label layoutX="741.0" layoutY="14.0" text="Ganancia" />
+      <Label layoutX="484.0" layoutY="75.0" text="Reclutamiento" />
+      <Label layoutX="491.0" layoutY="140.0" text="Crecimiento" />
+      <Label layoutX="477.0" layoutY="202.0" text="Cambio Inflacion" />
+      <Label layoutX="468.0" layoutY="266.0" text="Cambio corrupcion" />
+      <Label layoutX="470.0" layoutY="335.0" text="Cambio estabilidad" />
+      <Label fx:id="lbl_dinero" layoutX="321.0" layoutY="45.0" text="Label" />
+      <Label fx:id="lbl_soldados" layoutX="319.0" layoutY="110.0" text="Label" />
+      <Label fx:id="lbl_poblacion" layoutX="321.0" layoutY="172.0" text="Label" />
+      <Label fx:id="lbl_inflacion" layoutX="319.0" layoutY="234.0" text="Label" />
+      <Label fx:id="lbl_corrupcion" layoutX="319.0" layoutY="302.0" text="Label" />
+      <Label fx:id="lbl_estabilidad" layoutX="319.0" layoutY="367.0" text="Label" />
+      <Label fx:id="lbl_ingresos" layoutX="510.0" layoutY="45.0" text="Label" />
+      <Label fx:id="lbl_reclutamiento" layoutX="512.0" layoutY="110.0" text="Label" />
+      <Label fx:id="lbl_crecimiento" layoutX="510.0" layoutY="172.0" text="Label" />
+      <Label fx:id="lbl_cambioInflacion" layoutX="510.0" layoutY="234.0" text="Label" />
+      <Label fx:id="lbl_cambioCorrupcion" layoutX="512.0" layoutY="302.0" text="Label" />
+      <Label fx:id="lbl_cambioEstabilidad" layoutX="512.0" layoutY="367.0" text="Label" />
+      <Label layoutX="644.0" layoutY="45.0" text="Label" />
+      <Label layoutX="754.0" layoutY="45.0" text="Label" />
+      <Label layoutX="702.0" layoutY="101.0" text="Turnos" />
+      <Label layoutX="707.0" layoutY="131.0" text="Label" />
+      <Label layoutX="319.0" layoutY="432.0" text="Tabernas:" />
+      <Label layoutX="388.0" layoutY="432.0" text="Label" />
+      <Button layoutX="350.0" layoutY="450.0" mnemonicParsing="false" prefHeight="0.0" prefWidth="0.0" text="+" />
+      <Button layoutX="324.0" layoutY="450.0" mnemonicParsing="false" prefHeight="0.0" prefWidth="0.0" text="-" />
+      <Label layoutX="459.0" layoutY="432.0" text="Iglesias:" />
+      <Label layoutX="515.0" layoutY="432.0" text="Label" />
+      <Button layoutX="490.0" layoutY="450.0" mnemonicParsing="false" prefHeight="0.0" prefWidth="0.0" text="-" />
+      <Button layoutX="519.0" layoutY="450.0" mnemonicParsing="false" prefHeight="0.0" prefWidth="0.0" text="+" />
+      <Label layoutX="682.0" layoutY="432.0" text="Hospitales:" />
+      <Label layoutX="754.0" layoutY="432.0" text="Label" />
+      <Button layoutX="690.0" layoutY="450.0" mnemonicParsing="false" prefHeight="0.0" prefWidth="0.0" text="-" />
+      <Button layoutX="716.0" layoutY="450.0" mnemonicParsing="false" prefHeight="0.0" prefWidth="0.0" text="+" />
+      <Label layoutX="319.0" layoutY="493.0" text="Mercados:" />
+      <Button layoutX="324.0" layoutY="512.0" mnemonicParsing="false" prefHeight="0.0" prefWidth="0.0" text="-" />
+      <Button layoutX="350.0" layoutY="512.0" mnemonicParsing="false" prefHeight="0.0" prefWidth="0.0" text="+" />
+      <Label layoutX="446.0" layoutY="493.0" text="Centros de reclutamiento:" />
+      <Button layoutX="490.0" layoutY="511.0" mnemonicParsing="false" prefHeight="0.0" prefWidth="0.0" text="-" />
+      <Button layoutX="519.0" layoutY="511.0" mnemonicParsing="false" prefHeight="0.0" prefWidth="0.0" text="+" />
+      <Label layoutX="685.0" layoutY="493.0" text="Juzgados:" />
+      <Button layoutX="690.0" layoutY="511.0" mnemonicParsing="false" prefHeight="0.0" prefWidth="0.0" text="-" />
+      <Button layoutX="716.0" layoutY="511.0" mnemonicParsing="false" prefHeight="0.0" prefWidth="0.0" text="+" />
+      <Label layoutX="388.0" layoutY="493.0" text="Label" />
+      <Label layoutX="615.0" layoutY="493.0" text="Label" />
+      <Label layoutX="753.0" layoutY="493.0" text="Label" />
+   </children>
+</AnchorPane>
