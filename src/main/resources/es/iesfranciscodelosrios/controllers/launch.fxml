@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<BorderPane stylesheets="@../css/launch.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1">
+<BorderPane stylesheets="@../css/launch.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="es.iesfranciscodelosrios.controllers.LaunchController">
    <center>
       <GridPane id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" styleClass="fondo" stylesheets="@../css/launch.css">
         <columnConstraints>
@@ -27,7 +28,10 @@
                               <TextField fx:id="txt_user_login" layoutX="96.0" layoutY="66.0" promptText="Usuario" />
                               <PasswordField fx:id="txt_pw_login" layoutX="96.0" layoutY="131.0" promptText="Contraseña" />
                               <Label layoutX="139.0" layoutY="106.0" text="Contraseña" />
-                              <Button fx:id="btn_login" layoutX="148.0" layoutY="191.0" mnemonicParsing="false" text="Login" />
+                              <Button fx:id="btn_login" layoutX="148.0" layoutY="191.0" mnemonicParsing="false" text="Login">
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor></Button>
                               <Label layoutX="151.0" layoutY="39.0" text="Usuario" />
                            </children></AnchorPane>
                   </content>
@@ -39,7 +43,10 @@
                               <TextField fx:id="txt_user_register" layoutX="96.0" layoutY="66.0" promptText="Usuario" />
                               <PasswordField fx:id="txt_pw_register" layoutX="96.0" layoutY="131.0" promptText="Contraseña" />
                               <Label layoutX="140.0" layoutY="105.0" text="Contraseña" />
-                              <Button fx:id="btn_register" layoutX="135.0" layoutY="191.0" mnemonicParsing="false" text="Registrate" />
+                              <Button fx:id="btn_register" layoutX="135.0" layoutY="191.0" mnemonicParsing="false" text="Registrate">
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor></Button>
                               <Label layoutX="151.0" layoutY="39.0" text="Usuario" />
                            </children>
                         </AnchorPane>
