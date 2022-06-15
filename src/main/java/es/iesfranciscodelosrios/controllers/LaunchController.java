@@ -13,7 +13,7 @@ import javafx.stage.Stage;
 
 
 
-public class LaunchController extends Controller{
+public class LaunchController extends Controller {
 
     public LaunchController(){
         super();
@@ -58,7 +58,7 @@ public class LaunchController extends Controller{
                 Usuario user = users.identify(nickname,password);
 
                 if (user != null){
-                    objects.add(user);
+                    activeUser = user;
                     App.loadScene(new Stage(),"loggedMenu","Medieval Game",false,false);
                     App.closeScene((Stage)btn_login.getScene().getWindow());
                 }else{
