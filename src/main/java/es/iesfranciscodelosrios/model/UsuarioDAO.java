@@ -48,7 +48,13 @@ public class UsuarioDAO extends DAOConnection{
                     Integer id = res.getInt(1);
                     String nickname = res.getString(2);
                     String ps = res.getString(3);
-                    return new Usuario(nickname,ps,id);
+                    PartidaDAO pdao = PartidaDAO.getInstance();
+                    List<Partida> p = new ArrayList<>();
+                    Usuario user = new Usuario(nickname,ps,id,p);
+                    p = pdao.getPartidas(user.getId());
+                    user.setPartidas(p);
+                    p.forEach(x->x.setUsuario(user));
+                    return user;
                 }
             } catch (SQLException e) {
 

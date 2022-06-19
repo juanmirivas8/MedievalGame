@@ -174,4 +174,10 @@ public class Utils {
         }
         return  Integer.valueOf((int)(Math.random() * (sup - inf + 1) + inf));
     }
+
+    public static Boolean compare(Double n1, Double n2){
+        if( Math.abs(n1 - n2) < 0.00001)
+            return true;
+        return false;
+    }
 }

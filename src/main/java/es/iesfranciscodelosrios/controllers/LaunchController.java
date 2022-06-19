@@ -11,6 +11,7 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
+import java.util.logging.Level;
 
 
 public class LaunchController extends Controller {
@@ -56,7 +57,7 @@ public class LaunchController extends Controller {
                 s.toFront();
             }else{
                 Usuario user = users.identify(nickname,password);
-
+                Log.log(Level.SEVERE, String.valueOf(user.getPartidas().size()));
                 if (user != null){
                     activeUser = user;
                     App.loadScene(new Stage(),"loggedMenu","Medieval Game",false,false);
@@ -87,7 +88,7 @@ public class LaunchController extends Controller {
                 Stage s =(Stage)alertDialog.getDialogPane().getScene().getWindow();
                 s.toFront();
             }else{
-            Usuario user = new Usuario(nickname,password,null);
+            Usuario user = new Usuario(nickname,password,null,null);
 
             Boolean res = users.insert(user);
 

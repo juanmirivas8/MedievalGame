@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Slider?>
@@ -9,17 +11,276 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
-
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="es.iesfranciscodelosrios.controllers.PartidaController">
    <top>
-      <HBox prefHeight="100.0" prefWidth="1000.0" style="-fx-background-color: turquoise;" BorderPane.alignment="CENTER" />
+      <HBox alignment="CENTER" prefHeight="49.0" prefWidth="1000.0" style="-fx-background-color: #ebd3d1;" BorderPane.alignment="CENTER">
+         <children>
+            <VBox alignment="TOP_CENTER" prefHeight="49.0" prefWidth="157.0">
+               <children>
+                  <Label text="POBLACION">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font></Label>
+                  <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="3.0">
+                     <children>
+                        <Label fx:id="lb_poblacion" alignment="CENTER" contentDisplay="CENTER" text="Label" />
+                        <Label text="- Cambio:" />
+                        <Label fx:id="lb_poblacionCambio" text="Label" />
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+            <VBox alignment="TOP_CENTER" layoutX="10.0" layoutY="10.0" prefHeight="49.0" prefWidth="157.0">
+               <children>
+                  <Label text="CORRUPCION">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font></Label>
+                  <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="3.0">
+                     <children>
+                        <Label fx:id="lb_corrupcion" alignment="CENTER" contentDisplay="CENTER" text="Label" />
+                        <Label text="- Cambio:" />
+                        <Label fx:id="lb_corrupcionCambio" text="Label" />
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+            <VBox alignment="TOP_CENTER" layoutX="167.0" layoutY="10.0" prefHeight="49.0" prefWidth="157.0">
+               <children>
+                  <Label text="ESTABILIDAD">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font></Label>
+                  <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="3.0">
+                     <children>
+                        <Label fx:id="lb_estabilidad" alignment="CENTER" contentDisplay="CENTER" text="Label" />
+                        <Label text="- Cambio:" />
+                        <Label fx:id="lb_estabilidadCambio" text="Label" />
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+            <VBox alignment="TOP_CENTER" layoutX="167.0" layoutY="10.0" prefHeight="49.0" prefWidth="157.0">
+               <children>
+                  <Label text="DINERO">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font></Label>
+                  <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="3.0">
+                     <children>
+                        <Label fx:id="lb_dinero" alignment="CENTER" contentDisplay="CENTER" text="Label" />
+                        <Label text="Cambio:" />
+                        <Label fx:id="lb_dineroCambio" text="Label" />
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+            <VBox alignment="TOP_CENTER" layoutX="481.0" layoutY="10.0" prefHeight="49.0" prefWidth="157.0">
+               <children>
+                  <Label text="INFLACION">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font></Label>
+                  <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="3.0">
+                     <children>
+                        <Label fx:id="lb_inflacion" alignment="CENTER" contentDisplay="CENTER" text="Label" />
+                        <Label text="Cambio:" />
+                        <Label fx:id="lb_inflacionCambio" text="Label" />
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+            <VBox alignment="TOP_CENTER" layoutX="638.0" layoutY="10.0" prefHeight="49.0" prefWidth="157.0">
+               <children>
+                  <Label text="SOLDADOS">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font></Label>
+                  <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="3.0">
+                     <children>
+                        <Label fx:id="lb_soldados" alignment="CENTER" contentDisplay="CENTER" text="Label" />
+                        <Label text="Cambio:" />
+                        <Label fx:id="lb_soldadosCambio" text="Label" />
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+         </children></HBox>
    </top>
    <left>
-      <VBox prefHeight="590.0" prefWidth="150.0" style="-fx-background-color: red;" BorderPane.alignment="CENTER" />
+      <VBox alignment="CENTER" prefHeight="590.0" prefWidth="150.0" style="-fx-background-color: #ebd3d1;" BorderPane.alignment="CENTER">
+         <children>
+            <Label text="INVERSIONES">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+               <VBox.margin>
+                  <Insets bottom="10.0" />
+               </VBox.margin>
+            </Label>
+            <VBox alignment="TOP_CENTER" prefHeight="87.0" prefWidth="150.0" spacing="2.0">
+               <children>
+                  <Label text="TABERNA">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </Label>
+                  <Button fx:id="btn_tabernaComprar" mnemonicParsing="false" style="-fx-background-color: green;" text="Comprar" textFill="WHITE">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Button>
+                  <Label fx:id="lb_taberna" text="Label" />
+                  <Button fx:id="btn_tabernaVender" layoutX="54.0" layoutY="36.0" mnemonicParsing="false" style="-fx-background-color: red;" text="Vender">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+               </children>
+            </VBox>
+            <VBox alignment="TOP_CENTER" layoutX="10.0" layoutY="40.0" prefHeight="85.0" prefWidth="150.0" spacing="2.0">
+               <children>
+                  <Label text="CUARTEL">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </Label>
+                  <Button fx:id="btn_cuartelComprar" mnemonicParsing="false" style="-fx-background-color: green;" text="Comprar" textFill="WHITE">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                  <Label fx:id="lb_cuartel" text="Label" />
+                  <Button fx:id="btn_cuartelVender" layoutX="54.0" layoutY="36.0" mnemonicParsing="false" style="-fx-background-color: red;" text="Vender">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+               </children>
+            </VBox>
+            <VBox alignment="TOP_CENTER" layoutX="10.0" layoutY="140.0" prefHeight="85.0" prefWidth="150.0" spacing="2.0">
+               <children>
+                  <Label text="HOSPITAL">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </Label>
+                  <Button fx:id="btn_hospitalComprar" mnemonicParsing="false" prefHeight="11.0" prefWidth="63.0" style="-fx-background-color: green;" text="Comprar" textFill="WHITE">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                  <Label fx:id="lb_hospital" text="Label" />
+                  <Button fx:id="btn_hospitalVender" layoutX="54.0" layoutY="36.0" mnemonicParsing="false" style="-fx-background-color: red;" text="Vender">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+               </children>
+            </VBox>
+            <VBox alignment="TOP_CENTER" layoutX="10.0" layoutY="212.0" prefHeight="85.0" prefWidth="150.0" spacing="2.0">
+               <children>
+                  <Label text="ESCUELA">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </Label>
+                  <Button fx:id="btn_escuelaComprar" mnemonicParsing="false" prefHeight="11.0" prefWidth="63.0" style="-fx-background-color: green;" text="Comprar" textFill="WHITE">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                  <Label fx:id="lb_escuela" text="Label" />
+                  <Button fx:id="btn_escuelaVender" layoutX="54.0" layoutY="36.0" mnemonicParsing="false" style="-fx-background-color: red;" text="Vender">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+               </children>
+            </VBox>
+            <VBox alignment="TOP_CENTER" layoutX="10.0" layoutY="297.0" prefHeight="85.0" prefWidth="150.0" spacing="2.0">
+               <children>
+                  <Label text="IGLESIA">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </Label>
+                  <Button fx:id="btn_iglesiaComprar" mnemonicParsing="false" prefHeight="11.0" prefWidth="63.0" style="-fx-background-color: green;" text="Comprar" textFill="WHITE">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                  <Label fx:id="lb_iglesia" text="Label" />
+                  <Button fx:id="btn_iglesiaVender" layoutX="54.0" layoutY="36.0" mnemonicParsing="false" style="-fx-background-color: red;" text="Vender">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+               </children>
+            </VBox>
+            <VBox alignment="TOP_CENTER" layoutX="10.0" layoutY="382.0" prefHeight="85.0" prefWidth="150.0" spacing="2.0">
+               <children>
+                  <Label text="BANCO">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </Label>
+                  <Button fx:id="btn_bancoComprar" mnemonicParsing="false" prefHeight="11.0" prefWidth="63.0" style="-fx-background-color: green;" text="Comprar" textFill="WHITE">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                  <Label fx:id="lb_banco" text="Label" />
+                  <Button fx:id="btn_bancoVender" layoutX="54.0" layoutY="36.0" mnemonicParsing="false" style="-fx-background-color: red;" text="Vender">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+               </children>
+            </VBox>
+         </children></VBox>
    </left>
    <right>
-      <VBox prefHeight="610.0" prefWidth="150.0" style="-fx-background-color: yellow;" BorderPane.alignment="CENTER" />
+      <VBox alignment="CENTER" prefHeight="610.0" prefWidth="150.0" spacing="50.0" style="-fx-background-color: #ebd3d1;" BorderPane.alignment="CENTER">
+         <children>
+            <VBox alignment="CENTER" prefHeight="88.0" prefWidth="150.0" spacing="5.0">
+               <children>
+                  <Label text="TURNOS">
+                     <font>
+                        <Font name="System Bold" size="20.0" />
+                     </font></Label>
+                  <Label fx:id="lb_turnos" text="TURNOS" />
+               </children>
+            </VBox>
+            <Button fx:id="btn_nextTurn" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" prefHeight="100.0" prefWidth="100.0" style="-fx-background-color: aquamarine;" text="SIGUIENTE TURNO">
+               <font>
+                  <Font name="JetBrains Mono ExtraBold" size="12.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <VBox.margin>
+                  <Insets left="5.0" right="5.0" />
+               </VBox.margin>
+            </Button>
+            <Button fx:id="btn_exit" mnemonicParsing="false" style="-fx-background-color: crimson;" text="SALIR">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Button fx:id="btn_save" mnemonicParsing="false" style="-fx-background-color: greenyellow;" text="GUARDAR Y SALIR">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+         </children></VBox>
    </right>
    <center>
       <GridPane BorderPane.alignment="CENTER">
@@ -37,12 +298,36 @@
             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <Label alignment="CENTER" prefHeight="112.0" prefWidth="594.0" text="Label" textAlignment="CENTER" wrapText="true" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.rowIndex="3" />
-            <Slider blockIncrement="0.1" majorTickUnit="10.0" minorTickCount="5" showTickLabels="true" showTickMarks="true" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.rowIndex="1" />
-            <Slider blockIncrement="0.1" majorTickUnit="10.0" minorTickCount="5" showTickLabels="true" showTickMarks="true" GridPane.columnIndex="1" GridPane.columnSpan="2" />
-            <Slider blockIncrement="0.1" majorTickUnit="10.0" minorTickCount="5" showTickLabels="true" showTickMarks="true" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.rowIndex="2" />
-            <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="Button" GridPane.columnSpan="2" GridPane.rowIndex="4" />
-            <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="Button" GridPane.columnIndex="2" GridPane.columnSpan="2" GridPane.rowIndex="4" />
+            <Label fx:id="lb_titulo" alignment="CENTER" prefHeight="112.0" prefWidth="594.0" text="Label" textAlignment="CENTER" wrapText="true" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.rowIndex="3" />
+            <Slider fx:id="sld_soc" blockIncrement="0.1" majorTickUnit="10.0" minorTickCount="5" showTickLabels="true" showTickMarks="true" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.rowIndex="1" />
+            <Slider fx:id="sld_adm" blockIncrement="0.1" majorTickUnit="10.0" minorTickCount="5" showTickLabels="true" showTickMarks="true" GridPane.columnIndex="1" GridPane.columnSpan="2" />
+            <Slider fx:id="sld_mil" blockIncrement="0.1" majorTickUnit="10.0" minorTickCount="5" showTickLabels="true" showTickMarks="true" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.rowIndex="2" />
+            <Button fx:id="btn_opcionA" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="Button" GridPane.columnSpan="2" GridPane.rowIndex="4">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></Button>
+            <Button fx:id="btn_opcionB" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="Button" GridPane.columnIndex="2" GridPane.columnSpan="2" GridPane.rowIndex="4">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></Button>
+            <Label alignment="TOP_LEFT" maxWidth="1.7976931348623157E308" prefHeight="37.0" prefWidth="107.0" text="GASTO ADMIN.">
+               <GridPane.margin>
+                  <Insets />
+               </GridPane.margin>
+               <padding>
+                  <Insets left="5.0" />
+               </padding>
+            </Label>
+            <Label alignment="TOP_LEFT" maxWidth="1.7976931348623157E308" prefHeight="37.0" prefWidth="107.0" text="GASTO SOCIAL" GridPane.rowIndex="1">
+               <padding>
+                  <Insets left="5.0" />
+               </padding>
+            </Label>
+            <Label alignment="TOP_LEFT" maxWidth="1.7976931348623157E308" prefHeight="37.0" prefWidth="107.0" text="GASTO MILITAR" GridPane.rowIndex="2">
+               <padding>
+                  <Insets left="5.0" />
+               </padding>
+            </Label>
          </children>
       </GridPane>
    </center>
