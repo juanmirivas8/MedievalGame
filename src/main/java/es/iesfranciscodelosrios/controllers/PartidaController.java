@@ -1,5 +1,6 @@
 package es.iesfranciscodelosrios.controllers;
 
+import es.iesfranciscodelosrios.model.Evento;
 import es.iesfranciscodelosrios.model.Partida;
 import es.iesfranciscodelosrios.model.PartidaDAO;
 import es.iesfranciscodelosrios.model.PartidaFX;
@@ -7,6 +8,7 @@ import es.iesfranciscodelosrios.utils.Utils;
 import javafx.application.Platform;
 import javafx.beans.binding.Bindings;
 import javafx.fxml.FXML;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.Slider;
@@ -145,20 +147,20 @@ public class PartidaController extends Controller{
        },activePartidaFX.poblacionCambio,activePartidaFX.hospitales));
 
        lb_corrupcionCambio.textProperty().bind(Bindings.createStringBinding(()-> {
-           return String.format("%.2f",-0.01*activePartidaFX.escuelas.getValue() - sld_adm.valueProperty().getValue()/1000);
-               },activePartidaFX.escuelas,sld_adm.valueProperty()));
+           return String.format("%.2f",activePartidaFX.corrupcionCambio.getValue() -0.01*activePartidaFX.escuelas.getValue() - sld_adm.valueProperty().getValue()/1000);
+               },activePartidaFX.escuelas,sld_adm.valueProperty(),activePartidaFX.corrupcionCambio));
 
         lb_estabilidadCambio.textProperty().bind(Bindings.createStringBinding(()->{
-            return String.format("%.2f",0.01*activePartidaFX.iglesias.getValue() + sld_soc.valueProperty().getValue()/1000);
-        },activePartidaFX.iglesias,sld_soc.valueProperty()));
+            return String.format("%.2f",activePartidaFX.estabilidadCambio.getValue() +0.01*activePartidaFX.iglesias.getValue() + sld_soc.valueProperty().getValue()/1000);
+        },activePartidaFX.estabilidadCambio,activePartidaFX.iglesias,sld_soc.valueProperty()));
 
         lb_inflacionCambio.textProperty().bind(Bindings.createStringBinding(()->{
             return String.format("%.2f",activePartidaFX.inflacionCambio.getValue() - activePartidaFX.bancos.getValue()*0.01);
         },activePartidaFX.inflacionCambio,activePartidaFX.bancos));
 
         lb_soldadosCambio.textProperty().bind(Bindings.createStringBinding(()->{
-            return String.format("%.2f",0.01*activePartidaFX.cuarteles.getValue() + sld_mil.valueProperty().getValue()/1000);
-        },activePartidaFX.cuarteles,sld_mil.valueProperty()));
+            return String.format("%.2f",activePartidaFX.soldadosCambio.getValue()+ 0.01*activePartidaFX.cuarteles.getValue() + sld_mil.valueProperty().getValue()/1000);
+        },activePartidaFX.soldadosCambio,activePartidaFX.cuarteles,sld_mil.valueProperty()));
 
         btn_nextTurn.setOnAction(actionEvent -> {
           activePartidaFX.turnos.set(activePartidaFX.turnos.get() + 1);
@@ -169,7 +171,35 @@ public class PartidaController extends Controller{
           activePartidaFX.estabilidad.set(Double.parseDouble(String.format("%.2f",activePartidaFX.estabilidad.get() + Double.parseDouble(lb_estabilidadCambio.textProperty().getValue()))));
           activePartidaFX.soldados.set(Double.parseDouble(String.format("%.2f",activePartidaFX.soldados.get() + Double.parseDouble(lb_soldadosCambio.textProperty().getValue()))));
 
+            Evento e = Utils.randomEvento();
+
+            lb_titulo.setText(e.getEnunciado());
+            btn_opcionA.setText(e.getOpcionA());
+            btn_opcionB.setText(e.getOpcionB());
+            btn_opcionA.setDisable(false);
+            btn_opcionB.setDisable(false);
+
+            btn_opcionA.setOnAction(a1 -> {
+                e.aplicarEvento(activePartidaFX,true);
+                btn_opcionA.setDisable(true);
+                btn_opcionB.setDisable(true);
+            });
+
+            btn_opcionB.setOnAction(a2 -> {
+                e.aplicarEvento(activePartidaFX,false);
+                btn_opcionA.setDisable(true);
+                btn_opcionB.setDisable(true);
+            });
+
+            if(activePartidaFX.isLost()){
+                Utils.showPopUp("Partida finalizada","Has perdido la partida","Has durado "+activePartidaFX.turnos.get()+" turnos", Alert.AlertType.ERROR);
+                App.loadScene(new Stage(),"loggedMenu","Medieval Game",false,false);
+                App.closeScene((Stage)btn_exit.getScene().getWindow());
+            }
         });
+
+
         Platform.runLater(()-> Utils.closeRequest((Stage)btn_exit.getScene().getWindow()));
+
     }
 }

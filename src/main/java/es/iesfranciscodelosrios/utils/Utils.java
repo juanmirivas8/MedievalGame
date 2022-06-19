@@ -1,5 +1,8 @@
 package es.iesfranciscodelosrios.utils;
 
+import es.iesfranciscodelosrios.model.Evento;
+import es.iesfranciscodelosrios.model.eventos.Bancarrota;
+import es.iesfranciscodelosrios.model.eventos.Revuelta;
 import javafx.application.Platform;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ButtonType;
@@ -179,5 +182,13 @@ public class Utils {
         if( Math.abs(n1 - n2) < 0.00001)
             return true;
         return false;
+    }
+
+    public static Evento randomEvento(){
+        List<Evento> eventos = new ArrayList<>();
+        eventos.add(new Revuelta());
+        eventos.add(new Bancarrota());
+
+        return eventos.get(Utils.randomNumber(0,eventos.size()-1));
     }
 }
