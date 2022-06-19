@@ -64,4 +64,11 @@ public class PartidaFX {
         p.setUsuario(usuario);
         return p;
     }
+
+    public Boolean isLost(){
+        if(poblacion.get()<=0 || dinero.get()<=0 || soldados.get()<=0 || estabilidad.get()<=0 || corrupcion.get()>=100 || inflacion.get()>=100){
+            return true;
+        }
+        return false;
+    }
 }
