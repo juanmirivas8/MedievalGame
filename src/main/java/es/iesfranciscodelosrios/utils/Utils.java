@@ -112,6 +112,15 @@ public class Utils {
         return alertDialog;
     }
 
+    /**
+     *  Lee una entrada de texto mediante una ventana de dialogo
+     * @param stage Stage de la ventana actual
+     * @param title Titulo de la ventana
+     * @param header Cabecera de la ventana
+     * @param description Texto de la ventana
+     * @param max_characters Numero maximo de caracteres que se pueden introducir
+     * @return Cadena con la entrada de texto
+     */
     public static String showDialogString(Stage stage, String title, String header, String description, int max_characters){
         TextInputDialog dialog = new TextInputDialog("");
         dialog.setTitle(title);
@@ -146,6 +155,10 @@ public class Utils {
         return e.getClass().getName()+" - "+e.getMessage();
     }
 
+    /**
+     *  Metodo que muesyra una ventana de dialogo preguntando si se desea cerrar el programa
+     * @param stage Stage de la ventana actual
+     */
     public static void closeRequest(Stage stage){
            stage.setOnCloseRequest(windowEvent -> {
                 Alert a = new Alert(Alert.AlertType.CONFIRMATION);
@@ -159,6 +172,11 @@ public class Utils {
            });
     }
 
+    /**
+     * Metodo que añade un limite de caracteres a un TextField
+     * @param tf TextField a añadir el limite
+     * @param maxLength Numero maximo de caracteres
+     */
     public static void addTextLimiter(final TextField tf, final int maxLength) {
         tf.textProperty().addListener((ov, oldValue, newValue) -> {
             if (tf.getText().length() > maxLength) {
@@ -168,6 +186,12 @@ public class Utils {
         });
     }
 
+    /**
+     * Metodo que genera un numero aleatorio entre un minimo y un maximo
+     * @param inf Inferior del rango
+     * @param sup Superior del rango
+     * @return Numero aleatorio
+     */
     public static Integer randomNumber(Integer inf, Integer sup) {
         Integer aux = 0;
         if (inf > sup) {
@@ -184,6 +208,10 @@ public class Utils {
         return false;
     }
 
+    /**
+     * Metodo que genera un evento aleatorio
+     * @return
+     */
     public static Evento randomEvento(){
         List<Evento> eventos = new ArrayList<>();
         eventos.add(new Revuelta());

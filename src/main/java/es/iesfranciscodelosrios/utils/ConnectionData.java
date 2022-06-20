@@ -11,6 +11,11 @@ import java.io.File;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+/**
+ * Clase que almacena los datos de una conexión a una base de datos.
+ *
+ * @author Juan Miguel Rivas
+ */
 @XmlRootElement
 @XmlAccessorType(XmlAccessType.FIELD)
 public class ConnectionData {
@@ -60,6 +65,10 @@ public class ConnectionData {
         this.server = server;
     }
 
+    /**
+     * Carga los datos de una conexión a una base de datos a partir de un fichero XML.
+     * @param url URL del fichero XML.
+     */
     public void load(String url){
         ConnectionData aux;
         try {

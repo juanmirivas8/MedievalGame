@@ -8,12 +8,19 @@ import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+/**
+ * Clase que usa a la clase SQL para la conexión a la base de datos.
+ * @author Juan Miguel Rivas Velasco
+ */
 public abstract class DAOConnection {
     protected static Connection cn;
     protected static Boolean online;
     protected static final Logger Log = Utils.getLogger();
     protected static UsuarioDAO users;
 
+    /**
+     * Constructor de la clase
+     */
     public DAOConnection(){
         if(cn == null){
             cn = SQL.getConnection("/es/iesfranciscodelosrios/others/h2.xml",
@@ -26,6 +33,10 @@ public abstract class DAOConnection {
         }
     }
 
+    /**
+     * Metodo que cierra la conexion a la base de datos.
+     * @return true si se cierra la conexion, false si no se puede cerrar.
+     */
     public static Boolean close(){
        Boolean ret = false;
         try {
